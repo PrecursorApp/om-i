@@ -6,11 +6,11 @@ Instrumentation helper for Om applications.
 
 Om-i (pronounced "Oh, my!") helps you identify the components in your Om application that are being passed too much of your app state and rendering unnecessarily. It provides useful statistics about render times and frequencies for all of your components.
 
+You can see it live on [Precursor](https://precursorapp.com), a collaborative drawing application. Use Ctrl+Alt+Shift+j to toggle it.
+
 Here it is in action:
 
 ![Demo](http://dtwdl3ecuoduc.cloudfront.net/om-i/om-i-demo.gif)
-
-You can see it live on [Precursor](https://precursorapp.com), a collaborative drawing application. Use Ctrl+Alt+Shift+j to toggle it.
 
 ## Setup
 
