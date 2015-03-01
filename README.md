@@ -10,7 +10,7 @@ Here it is in action:
 
 ![Demo](http://dtwdl3ecuoduc.cloudfront.net/om-i/om-i-demo.gif)
 
-You can see it live on [https://precursorapp.com](Precursor), a collaborative drawing application. Use Ctrl+Alt+Shift+j to toggle it.
+You can see it live on [Precursor](https://precursorapp.com), a collaborative drawing application. Use Ctrl+Alt+Shift+j to toggle it.
 
 ## Setup
 
