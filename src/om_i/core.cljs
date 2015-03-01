@@ -68,13 +68,17 @@
                               (max (- now (:last-will-mount stats now)) 0))))))
       (.call f this))))
 
+(defn instrument-methods [methods]
+  (-> methods
+    (update-in [:componentWillUpdate] wrap-will-update)
+    (update-in [:componentDidUpdate] wrap-did-update)
+    (update-in [:componentWillMount] wrap-will-mount)
+    (update-in [:componentDidMount] wrap-did-mount)))
+
 (def instrumentation-methods
   (om/specify-state-methods!
    (-> om/pure-methods
-     (update-in [:componentWillUpdate] wrap-will-update)
-     (update-in [:componentDidUpdate] wrap-did-update)
-     (update-in [:componentWillMount] wrap-will-mount)
-     (update-in [:componentDidMount] wrap-did-mount)
+     (instrument-methods)
      (clj->js))))
 
 (defn avg [coll]

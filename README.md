@@ -55,7 +55,7 @@ You can override the defaults with:
 (om-i.core/setup-component-stats! {:class "om-instrumentation"
                                    :clear-shortcut #{"ctrl" "alt" "shift" "j"}
                                    :toggle-shortcut #{"ctrl" "alt" "shift" "k"}
-                                   :sort-shorcut #{"ctrl" "alt" "shift" "s"}}})
+                                   :sort-shorcut #{"ctrl" "alt" "shift" "s"}})
 ```
 
 ### Styles
@@ -69,6 +69,21 @@ To try out Om-i, or just using it in development, we've provided a helper that w
 ```
 
 It's not recommended to use this in production.
+
+### Wrapping a pre-existing descriptor
+
+If you're already using a custom descriptor, you can still use Om-i. Here's an example wrapping Om's `no-local-descriptor`.
+
+```
+(let [methods (om-i.core/instrument-methods om/no-local-state-methods)
+      descriptor (om/no-local-descriptor methods)]
+  (om/root
+    app-component
+    app-state
+    {:target container
+     :instrument (fn [f cursor m]
+                   (om/build* f cursor (assoc m :descriptor descriptor)))}))
+```
 
 ## License
 
