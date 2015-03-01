@@ -62,7 +62,7 @@ You can override the defaults with:
 
 You need to set up css styles to handle displaying the instrumentation when it's opened. There are sample less and css files in the resources directory.
 
-To try out Om-i, or just using it in development, we've provided a helper that will embed a style tag with the syles from resources/om-i.min.css.
+If you want to try out Om-i, or just use it in development, we've provided a helper that will embed a style tag with the syles from resources/om-i.min.css.
 
 ```
 (om-i.hacks/insert-styles)
