@@ -26,11 +26,14 @@ Add Om-i to your project's dependencies
 Use Om-i's custom descriptor so that it can gather render times for your components. To enable it globally, use the `:instrument` opt in `om/root`
 
 ```
-(om/root app-component
-         app-state
-         {:target container
-          :instrument (fn [f cursor m]
-                        (om/build* f cursor (assoc m :descriptor om-i.core/instrumentation-methods)))})
+(om/root
+  app-component
+  app-state
+  {:target container
+   :instrument (fn [f cursor m]
+                 (om/build* f cursor
+                            (assoc m
+                                   :descriptor om-i.core/instrumentation-methods)))})
 ```
 
 ### Mount the component
