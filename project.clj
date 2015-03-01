@@ -1,4 +1,4 @@
-(defproject om-i "0.1.0-SNAPSHOT"
+(defproject precursor/om-i "0.1.0-SNAPSHOT"
   :description "Instrumentation helpers for Om applications"
   :url "https://github.com/PrecursorApp/om-i"
 
