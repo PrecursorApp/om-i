@@ -18,7 +18,7 @@ Here it is in action:
 Add Om-i to your project's dependencies
 
 ```
-[precursor/om-i "0.1.0-SNAPSHOT"]
+[precursor/om-i "0.1.0"]
 ```
 
 ### Enable the instrumentation
