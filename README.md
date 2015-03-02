@@ -8,7 +8,9 @@ Om-i (pronounced "Oh, my!") helps you identify the components in your [Om](https
 
 You can see it live on [Precursor](https://precursorapp.com), a collaborative drawing application. Use Ctrl+Alt+Shift+j to toggle it.
 
-![Demo](http://dtwdl3ecuoduc.cloudfront.net/om-i/instrumentation.gif)
+<a href="https://precursorapp.com">
+ <img src="http://dtwdl3ecuoduc.cloudfront.net/om-i/instrumentation.gif" />
+</a>
 
 ## Setup
 
