@@ -190,8 +190,11 @@
               (dom/tfoot nil
                 (dom/tr nil
                   (dom/td #js {:className "instrumentation-info" :colSpan "13"}
-                          (gstring/format "Component render stats, sorted by %s (Ctrl+Alt+Shift+s). Clicks go through. Ctrl+Alt+Shift+j to toggle, Ctrl+Alt+Shift+k to clear."
-                                                                           sort-order)))))))))))
+                          (gstring/format "Component render stats, sorted by %s (%s). Clicks go through. %s to toggle, %s to clear."
+                                          sort-order
+                                          (format-shortcut sort-shortcut)
+                                          (format-shortcut toggle-shortcut)
+                                          (format-shortcut clear-shortcut))))))))))))
 
 (defn prepend-stats-node [classname]
   (let [node (goog.dom/htmlToDocumentFragment (gstring/format "<div class='%s'></div>" classname))
