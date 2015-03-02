@@ -89,14 +89,6 @@
   (let [a (avg coll)]
     (Math/sqrt (avg (map #(Math/pow (- % a) 2) coll)))))
 
-(defn format-stat [mount-stat render-stat]
-  (gstring/format "%s|%s"
-                  (or mount-stat "-")
-                  (if render-stat
-                    (str (apply str (repeat (- 4 (count (str render-stat))) " "))
-                         render-stat)
-                    "   -")))
-
 (defn compare-display-name [a b]
   (compare (:display-name b)
            (:display-name a)))
