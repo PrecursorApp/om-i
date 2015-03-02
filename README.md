@@ -16,7 +16,7 @@ You can see it live on [Precursor](https://precursorapp.com), a collaborative dr
 Add Om-i to your project's dependencies
 
 ```
-[precursor/om-i "0.1.1"]
+[precursor/om-i "0.1.2"]
 ```
 
 ### Enable the instrumentation
