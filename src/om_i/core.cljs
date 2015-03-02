@@ -1,7 +1,5 @@
 (ns om-i.core
-  (:require [cljs-time.core :as time]
-            [cljs-time.format :as time-format]
-            [clojure.string :as str]
+  (:require [clojure.string :as str]
             [goog]
             [goog.dom]
             [goog.string :as gstring]
