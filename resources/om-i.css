@@ -1,54 +1,89 @@
-@keyframes admin-slide-down {
+@keyframes in-fade-top-soft {
   0% {
-    transform: translate(0, -100%);
-    -webkit-transform: translate(0, -100%);
+    opacity: 0;
+    transform: translate3d(0, -4rem, 0);
   }
   100% {
-    transform: translate(0, 0);
-    -webkit-transform: translate(0, 0);
+    opacity: 1;
+    transform: none;
   }
 }
-@-webkit-keyframes admin-slide-down {
+@-webkit-keyframes in-fade-top-soft {
   0% {
-    transform: translate(0, -100%);
-    -webkit-transform: translate(0, -100%);
+    opacity: 0;
+    -webkit-transform: translate3d(0, -4rem, 0);
   }
   100% {
-    transform: translate(0, 0);
-    -webkit-transform: translate(0, 0);
+    opacity: 1;
+    -webkit-transform: none;
   }
 }
-.om-instrumentation figure {
-  margin: 0;
-}
-.om-instrumentation .admin-stats {
-  animation: admin-slide-down 200ms ease-in-out;
-  -webkit-animation: admin-slide-down 200ms ease-in-out;
-  width: 100%;
-  color: white;
-  background-color: black;
-  z-index: 2000;
+.om-instrumentation {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  color: #888888;
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: 0;
-  opacity: 0.7;
-  pointer-events: none;
-  user-select: none;
+  width: 100%;
 }
-.om-instrumentation table {
-  font-family: monaco;
-  font-size: 12px;
-  width: calc(98%);
-  margin: 0 1em 1em;
+.instrumentation-table {
+  -webkit-animation: in-fade-top-soft 500ms;
+  animation: in-fade-top-soft 500ms;
+  background-color: rgba(0, 0, 0, 0.6);
+  font-family: Monaco, monospace;
+  font-size: .75rem;
+  line-height: 2;
+  width: 100%;
 }
-.om-instrumentation table th,
-.om-instrumentation table td {
+.instrumentation-table th {
+  color: #ffffff;
+  line-height: 1rem;
+  padding: 1.5rem 0;
+  text-transform: uppercase;
   text-align: left;
-  white-space: pre;
 }
-.om-instrumentation table tr:not(:last-child) {
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+.instrumentation-table th:not(:first-child) {
+  text-align: center;
 }
-.om-instrumentation table .number {
+.instrumentation-table th.left {
+  text-align: left;
+}
+.instrumentation-table th.right {
   text-align: right;
+}
+.instrumentation-table th,
+.instrumentation-table td {
+  white-space: pre-wrap;
+}
+.instrumentation-table th:first-child,
+.instrumentation-table td:first-child {
+  padding-left: 1.5rem;
+}
+.instrumentation-table tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.instrumentation-table tbody td:nth-child(even) {
+  text-align: right;
+  border-right: 1px dashed;
+  padding-right: .5em;
+}
+.instrumentation-table tbody td:nth-child(odd) {
+  text-align: left;
+  padding-left: .5em;
+}
+.instrumentation-table tbody td:first-child {
+  padding-left: 1.5rem;
+}
+.instrumentation-table tfoot td {
+  line-height: 1rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+.instrumentation-table small {
+  font-size: 1em;
+  opacity: .5;
 }
