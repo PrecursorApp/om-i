@@ -1,0 +1,7 @@
+dependencies:
+  post:
+    - lein cljsbuild once
+
+test:
+  override:
+    - echo no tests
