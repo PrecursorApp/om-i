@@ -1,6 +1,5 @@
 (ns om-i.core
   (:require [clojure.string :as str]
-            [goog]
             [goog.dom]
             [goog.string :as gstring]
             [om.core :as om :include-macros true]
