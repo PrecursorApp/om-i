@@ -3,6 +3,7 @@
             [goog]
             [goog.dom]
             [goog.string :as gstring]
+            [goog.string.format]
             [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
             [om-i.keyboard :as keyboard]
