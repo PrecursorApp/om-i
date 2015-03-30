@@ -1,6 +1,10 @@
+## 0.1.7
+### Changes
+* Fix ordering of render-ms and mount-ms
+
 ## 0.1.6
 ### Changes
-* fix borked release to Clojars on 0.1.5un-required goog.string.format. Thanks [@cldwalker](https://github.com/cldwalker)!
+* fix borked release to Clojars of 0.1.5
 
 ## 0.1.5
 ### Changes
