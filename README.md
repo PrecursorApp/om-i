@@ -17,7 +17,7 @@ You can see it live on [Precursor](https://precursorapp.com), a collaborative dr
 ### Dependencies
 Add Om-i to your project's dependencies
 
-```
+```clojure
 [precursor/om-i "0.1.7"]
 ```
 
@@ -25,7 +25,7 @@ Add Om-i to your project's dependencies
 
 Use Om-i's custom descriptor so that it can gather render times for your components. To enable it globally, use the `:instrument` opt in `om/root`
 
-```
+```clojure
 (om/root
   app-component
   app-state
@@ -40,7 +40,7 @@ Use Om-i's custom descriptor so that it can gather render times for your compone
 
 Add the following somewhere in your setup code. If you're using figwheel, place it somewhere that won't get reloaded.
 
-```
+```clojure
 (om-i.core/setup-component-stats!)
 ```
 
@@ -51,11 +51,11 @@ It will create a `div` in the body with classname "om-instrumentation" by defaul
 
 You can override the defaults with:
 
-```
-(om-i.core/setup-component-stats! {:class "om-instrumentation"
-                                   :clear-shortcut #{"ctrl" "alt" "shift" "j"}
-                                   :toggle-shortcut #{"ctrl" "alt" "shift" "k"}
-                                   :sort-shorcut #{"ctrl" "alt" "shift" "s"}})
+```clojure
+(om-i.core/setup-component-stats! {:class           "om-instrumentation"
+                                   :clear-shortcut  #{"ctrl" "alt" "shift" "k"}
+                                   :toggle-shortcut #{"ctrl" "alt" "shift" "j"}
+                                   :sort-shorcut    #{"ctrl" "alt" "shift" "s"}})
 ```
 
 ### Styles
@@ -64,7 +64,7 @@ You need to set up css styles to handle displaying the instrumentation when it's
 
 If you want to try out Om-i, or just use it in development, we've provided a helper that will embed a style tag with the syles from resources/om-i.min.css.
 
-```
+```clojure
 (om-i.hacks/insert-styles)
 ```
 
@@ -74,7 +74,7 @@ It's not recommended to use this in production.
 
 If you're already using a custom descriptor, you can still use Om-i. Here's an example wrapping Om's `no-local-descriptor`.
 
-```
+```clojure
 (let [methods (om-i.core/instrument-methods om/no-local-state-methods)
       descriptor (om/no-local-descriptor methods)]
   (om/root
