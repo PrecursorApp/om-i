@@ -2,6 +2,8 @@
 
 Instrumentation helper for Om applications.
 
+[![Circle CI](https://circleci.com/gh/PrecursorApp/om-i.svg?style=svg)](https://circleci.com/gh/PrecursorApp/om-i)
+
 ## Overview
 
 Om-i (pronounced "Oh, my!") helps you identify the components in your [Om](https://github.com/omcljs/om) application that are being passed too much of your app state and rendering unnecessarily. It provides useful statistics about render times and frequencies for all of your components.
