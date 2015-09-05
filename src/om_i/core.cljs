@@ -5,11 +5,10 @@
             [goog.string.format]
             [om.core :as om :include-macros true]
             [om.dom :as dom :include-macros true]
-            [om-i.keyboard :as keyboard]
-            [om-i.util :as util]))
+            [om-i.keyboard :as keyboard]))
 
-;; map of react-id to component render stats, e.g.
-;; {"0.1.1" {:last-will-update <time 3pm> :display-name "App" :last-did-update <time 3pm> :render-ms [10 39 20 40]}}
+;; map of display name to component render stats, e.g.
+;; {"App" {:last-will-update <time 3pm> :display-name "App" :last-did-update <time 3pm> :render-ms [10 39 20 40]}}
 (defonce component-stats (atom {}))
 
 (defn wrap-will-update
@@ -18,7 +17,7 @@
   [f]
   (fn [next-props next-state]
     (this-as this
-      (swap! component-stats update-in [(util/react-id this)]
+      (swap! component-stats update-in [((aget this "getDisplayName"))]
              merge {:display-name ((aget this "getDisplayName"))
                     :last-will-update (goog/now)})
       (.call f this next-props next-state))))
@@ -30,7 +29,7 @@
   [f]
   (fn [prev-props prev-state]
     (this-as this
-      (swap! component-stats update-in [(util/react-id this)]
+      (swap! component-stats update-in [((aget this "getDisplayName"))]
              (fn [stats]
                (let [now (goog/now)]
                  (-> stats
@@ -45,7 +44,7 @@
   [f]
   (fn []
     (this-as this
-      (swap! component-stats update-in [(util/react-id this)]
+      (swap! component-stats update-in [((aget this "getDisplayName"))]
              merge {:display-name ((aget this "getDisplayName"))
                     :last-will-mount (goog/now)})
       (.call f this))))
@@ -57,7 +56,7 @@
   [f]
   (fn []
     (this-as this
-      (swap! component-stats update-in [(util/react-id this)]
+      (swap! component-stats update-in [((aget this "getDisplayName"))]
              (fn [stats]
                (let [now (goog/now)]
                  (-> stats
@@ -147,7 +146,7 @@
 
                                 :render-std-dev (when (seq render-times) (int (std-dev render-times)))
                                 :mount-std-dev (when (seq mount-times) (int (std-dev mount-times)))}))
-                           (reduce (fn [acc [react-id data]]
+                           (reduce (fn [acc [display-name data]]
                                      (update-in acc [(:display-name data)] (fnil conj []) data))
                                    {} data))]
             (dom/table #js {:className "instrumentation-table"}

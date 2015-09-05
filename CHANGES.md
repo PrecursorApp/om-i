@@ -1,3 +1,7 @@
+## 0.1.8
+### Changes
+* Stop depending on _rootNodeId so that we can support React 0.13.
+
 ## 0.1.7
 ### Changes
 * Fix ordering of render-ms and mount-ms

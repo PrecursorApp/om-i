@@ -19,8 +19,8 @@ You can see it live on [Precursor](https://precursorapp.com), a collaborative dr
 ### Dependencies
 Add Om-i to your project's dependencies
 
-```clojure
-[precursor/om-i "0.1.7"]
+```
+[precursor/om-i "0.1.8"]
 ```
 
 ### Enable the instrumentation

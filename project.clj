@@ -1,4 +1,4 @@
-(defproject precursor/om-i "0.1.7"
+(defproject precursor/om-i "0.1.8"
   :description "Instrumentation helpers for Om applications"
   :url "https://github.com/PrecursorApp/om-i"
   :license {:name "Eclipse Public License"
